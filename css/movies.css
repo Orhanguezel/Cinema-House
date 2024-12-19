@@ -1,0 +1,56 @@
+.movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.movie {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.moviePicture {
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid #FFB100;
+}
+
+.info {
+    padding: 10px;
+}
+
+.movieName {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #FFB100;
+    margin-bottom: 5px;
+}
+
+.imdbPoint {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.imdbPoint.green {
+    color: #4CAF50;
+}
+
+.imdbPoint.yellow {
+    color: #FFC107;
+}
+
+.imdbPoint.red {
+    color: #F44336;
+}

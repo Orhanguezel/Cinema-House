@@ -75,6 +75,31 @@ body {
     color: #FFB100; 
 }
 
+.sidebar select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.sidebar select:hover {
+    background-color: #555;
+}
+
+.sidebar select:focus {
+    outline: none;
+    border: 2px solid #FFB100;
+}
+
+
+
+
+
 
 /* Hamburger Menü */
 .menu-toggle {
