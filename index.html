@@ -1,35 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film Uygulaması</title>
+    <title>Cinema-House</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="container">
-        <div class="header">
-            <form id="form">
-                <input type="text" id="searchInput" placeholder="Film Arayın...">
-            </form>
-        </div>
-
-        <div class="movies">
-            <!-- <div class="movie">
-                <img class="moviePicture" width="230" height="345" src="https://image.tmdb.org/t/p/w1280/qiAM7Y8xF8wJDDsjeSuLgzyFGmd.jpg" alt="">
-
-                <div class="info">
-                    <h4 class="movieName">Süper Mario Kardeşler Filmi</h4>
-                    <h5 class="imdbPoint">8</h5>
-                </div>
-            </div> -->
-        </div>
+    <!-- Hamburger Menu -->
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-    
 
-    <script src="api.js"></script>
+    <!-- Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <h1>Cinema-House</h1>
+            <nav>
+                <ul>
+                    <li>Plattform wählen
+                        <select id="platformSelect">
+                            <option value="all">Tüm Platformlar</option>
+                            <option value="netflix">Netflix</option>
+                            <option value="amazon">Amazon Prime</option>
+                            <option value="disney">Disney+</option>
+                            <option value="hbo">HBO Max</option>
+                            <option value="apple">Apple TV+</option>
+                        </select>
+                    </li>
+                    <li>Sıralama Ölçütü
+                        <select id="sortSelect">
+                            <option value="popularity.desc">Azalan Popülerlik</option>
+                            <option value="popularity.asc">Artan Popülerlik</option>
+                            <option value="vote_average.desc">Azalan Oylama</option>
+                            <option value="vote_average.asc">Artan Oylama</option>
+                            <option value="release_date.desc">Azalan Yayınlanma Tarihi</option>
+                            <option value="release_date.asc">Artan Yayınlanma Tarihi</option>
+                            <option value="original_title.asc">Başlık (A-Z)</option>
+                            <option value="original_title.desc">Başlık (Z-A)</option>
+                        </select>
+                    </li>
+                    <li>Populär</li>
+                    <li>Kategorien
+                        <ul>
+                            <li>Action</li>
+                            <li>Drama</li>
+                            <li>Komödie</li>
+                            <li>Horror</li>
+                            <li>Science-Fiction</li>
+                            <li>Dokumentationen</li>
+                        </ul>
+                    </li>
+                    <li>Neuerscheinungen</li>
+                    <li>Top bewertet</li>
+                    <li>Meine Liste</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2 class="head-title">Cinema-House: Aktuell im Stream</h2>
+
+            <!-- Header -->
+            <div class="header">
+                <form id="form">
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Film oder Serie suchen">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Current Shows -->
+            <h2 class="section-title">Jetzt ansehen</h2>
+            <section id="current-shows" class="movies">
+                <!-- Movies will be dynamically added here -->
+            </section>
+
+            <footer class="footer">
+                <p>© 2024 Cinema-House - All rights reserved</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="movieApi.js"></script>
     <script src="main.js"></script>
+    <script src="navbar.js"></script>
 </body>
 </html>
