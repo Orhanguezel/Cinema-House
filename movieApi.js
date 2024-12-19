@@ -6,9 +6,14 @@ class MovieAPI {
         this.upcomingURL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${this.apiKey}&language=tr-TR`;
         this.topRatedURL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${this.apiKey}&language=tr-TR`;
         this.nowPlayingURL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}&language=tr-TR`;
-        this.genreURL = `https://api.themoviedb.org/3/discover/movie?api_key=${this.apiKey}&language=en-TR&with_genres=`;
+        this.genreURL = `https://api.themoviedb.org/3/discover/movie?api_key=${this.apiKey}&language=tr-TR&with_genres=`;
         this.searchURL = `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=`;
+        this.baseDiscoverURL = `https://api.themoviedb.org/3/discover/movie?api_key=${this.apiKey}&language=tr-TR`;
         this.movies = document.querySelector(".movies");
+
+        // Varsayılan sıralama ve platform özellikleri
+        this.sortBy = "popularity.desc"; // Varsayılan sıralama
+        this.platform = "all"; // Varsayılan platform
     }
 
     // Popüler Filmleri Getir
@@ -51,6 +56,32 @@ class MovieAPI {
         const response = await fetch(this.searchURL + movieName);
         const movies = await response.json();
         this.displayInfo(movies);
+    }
+
+    // Sıralama ve Platform Filtresi ile Filmleri Getir
+    async getMoviesWithFilters() {
+        const platformFilter = this.getPlatformFilter();
+        const response = await fetch(`${this.baseDiscoverURL}&sort_by=${this.sortBy}${platformFilter}`);
+        const movies = await response.json();
+        this.displayInfo(movies);
+    }
+
+    // Platform Filtresini Al
+    getPlatformFilter() {
+        switch (this.platform) {
+            case "netflix":
+                return "&with_companies=213"; // Netflix Company ID
+            case "amazon":
+                return "&with_companies=1024"; // Amazon Company ID
+            case "disney":
+                return "&with_companies=2"; // Disney+ Company ID
+            case "hbo":
+                return "&with_companies=3268"; // HBO Max Company ID
+            case "apple":
+                return "&with_companies=420"; // Apple TV+ Company ID
+            default:
+                return ""; // Tüm platformlar
+        }
     }
 
     // Filmleri Sayfada Göster
