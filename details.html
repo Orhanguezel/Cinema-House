@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film Detayları</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <div id="details-container"></div>
-    <script type="module" src="./js/details.js"></script>
-</body>
-</html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Film Details</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/detail-section.css" />
+    <link rel="stylesheet" href="./css/detail-navbar.css" />
+  </head>
+  <body>
+    <header class="navbar">
+        <!-- Hamburger Menü -->
+        <div class="menu-toggle2" id="menu-toggle2">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="navbar-container">
+            <a href="index.html" class="logo">Cinema-House</a>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Startseite</a>
+                <a href="index.html#popular">Beliebt</a>
+                <a href="index.html#upcoming">Neuerscheinungen</a>
+                <a href="index.html#top-rated">Top bewertet</a>
+                <a href="index.html#genres">Kategorien</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div id="details-container" class="details-background"></div>
+    <section id="cast-section" class="cast-section"></section>
 
+    <script type="module" src="./js/details.js"></script>
+    <script src="./js/detail-navbar.js"></script>
+  </body>
+</html>

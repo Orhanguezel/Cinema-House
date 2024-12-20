@@ -60,6 +60,13 @@
     color: #F44336;
 }
 
+.no-results {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
 
 
 #movie-details {

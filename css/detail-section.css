@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #000;
+}
+
+.details-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.details-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.details-container img {
+    max-width: 300px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.details-info {
+    flex: 1;
+}
+
+.details-info h1 {
+    font-size: 2rem;
+    color: #FFB100;
+    margin-bottom: 15px;
+}
+
+.details-info p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.details-info .details-genres span {
+    background: #FFB100;
+    color: black;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+
+.cast-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.cast-section h2 {
+    font-size: 1.5rem;
+    color: #FFB100;
+    margin-bottom: 20px;
+}
+
+.cast-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cast-card {
+    width: 150px;
+    text-align: center;
+    color: white;
+}
+
+.cast-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+ /*Responsive Design  */
+@media screen and (max-width: 768px) {
+    .details-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .details-container img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .cast-list {
+        justify-content: flex-start;
+    }
+
+    .cast-card {
+        width: 100px;
+    }
