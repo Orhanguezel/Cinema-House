@@ -7,7 +7,7 @@
     .sidebar.show {
         transform: translateX(0);
     }
-    .menu-toggle {
+    .menu-toggle, .menu-toggle2 {
         display: block;
     }
 
