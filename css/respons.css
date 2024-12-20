@@ -1,0 +1,45 @@
+
+/* Responsive Sidebar */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-95%);
+    }
+    .sidebar.show {
+        transform: translateX(0);
+    }
+    .menu-toggle {
+        display: block;
+    }
+
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .header {
+        margin:20px;
+        justify-content: center;
+    }
+
+    .head-title{
+        display: block;
+    }
+
+    .social-icons {
+        margin-top: 20px;
+    }
+
+    .upcoming {
+        width: 90%;
+        height: auto; /* Mobil cihazlarda içerik uyumlu */
+    }
+
+    #youtube-player {
+        height: 300px; /* Mobilde daha küçük */
+    }
+
+    .latest-music {
+        grid-template-columns: 1fr; /* Tek sütun */
+        gap: 15px; /* Daha dar boşluk */
+    }
+}

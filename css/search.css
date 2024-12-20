@@ -1,0 +1,63 @@
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 18px 25px;
+    margin:0 25px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15), 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.search-bar button i {
+    color: #212121;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Sosyal Medya İkonları */
+.social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons div {
+    background-color: #212121;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15), 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Efekti */
+.social-icons div:hover {
+    transform: translateY(-10px); /* Div yukarı hareket eder */
+    box-shadow: 0 15px 25px rgba(255, 177, 0, 0.3), 0 0 15px rgba(255, 177, 0, 0.2); /* Vurgulu gölge */
+}
+
+.social-icons i {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons div:hover i {
+    transform: scale(1.2); /* İkon büyür */
+    color: #FFB100; /* Renk değişimi */
+}
