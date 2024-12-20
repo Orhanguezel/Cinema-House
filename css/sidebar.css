@@ -1,58 +1,106 @@
 
+/* Sidebar */
 .sidebar {
-    background-color: #333;
-    color: #fff;
-    width: 200px;
+    background-color: #212121;
     padding: 20px;
-    height: 100vh;
+    margin:60px 20px;
+    width: 250px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15), 0 0 10px rgba(255, 255, 255, 0.1);
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    z-index: 1000;
 }
 
 .sidebar h1 {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    color: #FFB100;
+    margin: 20px;
 }
-
-.sidebar ul {
+.sidebar nav ul {
     list-style: none;
-    padding: 0;
+    padding:20px;
 }
-
-.sidebar ul li {
-    margin: 10px 0;
-    cursor: pointer;
-}
-
-.main-content {
-    flex: 1;
-    padding: 20px;
-}
-
-.header {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.search-bar {
-    display: flex;
-    background-color: #444;
+.sidebar nav ul li {
+    font-size: 1.2rem;
     padding: 10px;
-    border-radius: 5px;
-    width: 100%;
-    max-width: 400px;
-}
-
-.search-bar input {
-    border: none;
-    background: none;
-    outline: none;
-    color: #fff;
-    flex: 1;
-}
-
-.search-bar button {
-    border: none;
-    background: none;
-    color: #fff;
+    margin: 15px 0;
     cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.sidebar nav ul li:hover {
+    transform: translateY(-10px);
+    border-radius: 10p;
+    box-shadow: 0 15px 25px rgba(255, 177, 0, 0.3), 0 0 15px rgba(255, 177, 0, 0.2);
+    color: #FFB100;
+}
+
+.sidebar nav ul ul {
+    list-style: none;
+    padding-left: 20px; 
+    display: none;
+    
+}
+
+.sidebar nav ul li:hover > ul {
+    display: block;
+}
+
+.sidebar nav ul li ul li {
+    font-size: 1rem;
+    color: #fff;
+    margin: 5px 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar nav ul li ul li:hover {
+    transform: translateX(10px); 
+    color: #FFB100; 
+}
+
+.sidebar select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.sidebar select:hover {
+    background-color: #555;
+}
+
+.sidebar select:focus {
+    outline: none;
+    border: 2px solid #FFB100;
+}
+
+.sidebar select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.sidebar select:hover {
+    background-color: #555;
+}
+
+.sidebar select:focus {
+    outline: none;
+    border: 2px solid #FFB100;
 }
