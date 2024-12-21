@@ -1,7 +1,5 @@
-/* Footer Styling */
 .footer {
     margin: 20px auto;
-    margin-left: 50px;
     width: 90%;
     padding: 20px;
     background: #212121;
@@ -109,8 +107,7 @@
     .footer {
         margin: 20px auto;
         padding: 15px;
-        width: 90%;
-        margin-left:40px;
+        width: calc(100% - 20px); /* Kenarlardan taşmayı önler */
     }
 
     .footer-content {
