@@ -2,83 +2,96 @@
 .footer {
     margin: 20px auto;
     width: 90%;
-    max-width: 1200px;
     padding: 20px;
-    background: #212121; 
+    background: #212121;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15), 0 0 10px rgba(255, 255, 255, 0.1);
-
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* İçeriği ortalar */
+    text-align: center; /* Mobilde metinleri ortalar */
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-direction: column; /* Mobilde her section alt alta gelir */
     gap: 20px;
-    
+    width: 100%; /* Genişlik tam oturur */
+    align-items: center; /* Her şeyi ortalar */
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+    text-align: center; /* Her section içeriğini ortalar */
 }
 
 .footer-section h3 {
     font-size: 1.2rem;
-    margin-bottom: 15px;
     color: #FFB100;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-.footer-section p, .footer-section ul {
+.footer-section p {
     font-size: 0.9rem;
-    margin: 5px 0;
-    line-height: 1.5;
+    line-height: 1.6;
+    color: #fff;
+    margin-bottom: 10px;
 }
 
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin: 5px 0;
-    cursor: pointer;
+.footer-section p a {
+    color: #FFB100;
+    text-decoration: none;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.footer-section ul li:hover {
-    color: #FFB100;
+.footer-section p a:hover {
+    color: #FFA500;
+    text-decoration: underline;
+}
+
+.tmdb-logo {
+    display: block;
+    margin: 10px auto;
+    width: 120px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.tmdb-logo:hover {
+    transform: scale(1.1);
+}
+
+.footer-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .footer-social-icons i {
-    margin-right: 10px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
+    font-size: 1.8rem;
+    color: #fff;
+    background: #333;
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .footer-social-icons i:hover {
     color: #FFB100;
-}
-
-.payment-icons img {
-    width: 50px;
-    height: 30px;
-    margin: 5px;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.payment-icons img:hover {
-    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.2);
 }
 
 .footer-bottom {
     text-align: center;
-    margin: 20px auto;
-    font-size: 1.2rem;
-    width: 90%;
-    max-width: 1200px;
-    padding: 20px;
-    background: #212121; /* Arka plan uyumu */
-    border-radius: 20px;
-    overflow: hidden; /* Taşmayı engeller */
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15), 0 0 10px rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
 }
 
 .footer-bottom a {
@@ -88,4 +101,43 @@
 
 .footer-bottom a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-section {
+        padding: 10px;
+    }
+
+    .footer-section h3 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .footer-section p {
+        font-size: 0.8rem;
+    }
+
+    .tmdb-logo {
+        width: 100px;
+    }
+
+    .footer-social-icons i {
+        font-size: 1.5rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
 }
